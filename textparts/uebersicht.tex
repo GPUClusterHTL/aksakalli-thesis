@@ -1,0 +1,104 @@
+\chapter{Übersicht}
+
+	\section{Der Java Community Process\tm (JCP)}
+
+		Seit 1998 existiert eine Unterabteilung von Sun Microsystems\tm welche sich mit der Weiterentwicklung der Java Technologie beschäftigte \cite{demig:04}. Diese Abteilung wurde in den Jahren 2000 und 2002 in Zusammen\-arbeit mit großen Industrie\-firmen öffentlich zu\-gänglich gemacht und als so genannter ''Java Community Process'' eingerichtet welcher von einem Executive Committee geleitet wird.
+	
+		\subsection{Aufgaben und Ziele des JCP}
+	
+		
+			Die Aufgabe \footnote{hfjhfsjhfsdj}des JCP ist es neue APIs\footnote{Application Programming Interfaces} für die ''Evolution'' der Programmiersprache Java zu entwickeln, zu normieren und zu verbessern. Diese Aufgabe wird in allen Bereichen von Java (J2ME\footnote{Java 2 Micro Edition}, J2SE\footnote{Java 2 Standard Edition}, J2EE\footnote{Java 2 Enterprise Edition} und den zugehörigen Technologien (XML, Web Services etc.) mit Hilfe von Experten aus der Industrie wahrgenommen.
+			
+			Hierunter finden sich Firmen wie Siemens, Nokia, Sony-Ericsson, Palm, Texas Instruments, etc. für die Java 2 Micro Edition und Apache, Apple, Borland, Cisco, HP, IBM, Oracle, SAP etc. für die Standard und Enterprise Edition aber auch einzelne Personen welche die Java Entwicklung vorantreiben möchten.
+			
+			Das Ziel des JCP ist ein binärer Softwarestandard, welcher die \emph{''write once, run anywhere''} Devise von Java für die Entwickler garantieren soll.
+
+		\subsection{Java Specification Request (JSR)}
+		
+			
+			Ein JSR durchläuft vier verschiedene Phasen und erzeugt eine Java API Spezifikation,  eine Referenzimplementierung  und eine Kompatibilitätstest-Umgebung.
+			
+			Die vier Phasen eines JSRs sind:
+			
+			
+			
+\begin{enumerate}
+\item \textbf{Initiation:} \\ 
+  	Ein JSR wird von Mitgliedern der Community eingebracht und durch das Executive Committee des JCP genehmigt. 
+\item \textbf{Community Draft:} \\ 
+	Eine Expertengruppe wird zusammengestellt, die einen Entwurf erarbeitet, welcher der Community vorgelegt wird. Nachdem das Feedback der Community in den Entwurf eingearbeitet wurde wird dieser dem Executive Committee übergeben und nach Bestätigung in die nächste Phase übergeben.
+\item \textbf{Public Draft:} \\ 
+	Der bisherige Entwurf wird allgemein zugänglich gemacht und mit Hilfe der öffentlichen Meinung einer weiteren Revision unterzogen. Weiters werden die Referenzimplementierung und die Umgebung für Kompatibilitätstests in dieser Phase erstellt.
+\item \textbf{Maintenance:} \\ 
+	Der fertige Entwurf wird in die Java Umgebung eingearbeitet und durch weitere Requests und Revisionen aktualisiert. Inwiefern solche Aktualisierungen in den bestehenden Entwurf eingearbeitet werden, wird durch das Executive Committee festgelegt.
+\end{enumerate}
+
+Dem JCP gelang es mit über 650 Mitgliedern und über 200 JSRs die größte öffentliche Plattform für die Weiterentwicklung einer Programmiersprache zu werden. Sie ermöglicht eine dynamische und fortlaufende Anpassung der Sprache an die Anforderungen der Programmierer und der Industrie.
+		
+Weiters unterzieht sich der JCP selbst regelmäßig einer Verbesserung durch sein eigenes JSR-Konzept, um auch hier die bestmöglichste Ausnutzung der Ressourcen und Möglichkeiten zu erreichen.\footnote{Aktuelle Version des JCP: 2.5}
+
+
+\section{Die Vorgänger Java 1.4.1 und Java 1.4.2}
+	
+Da die J2SE Plattform bereits weit verbreitet ist und sowohl auf Servern als auch auf Clients für die unterschiedlichsten Anwendungsgebiete benutzt wird, konzentrierte sich Sun Microsystems in den letzten beiden Releases der J2SE Plattform vor allem auf Bugfixes und Verbesserungen der Performance. 
+
+\subsection{Java 1.4.1 ''Hopper''} 
+\begin{itemize}
+	\item Über 2.000 Bugfixes
+	\item Zwei neue Garbage Collector Implementationen
+	\item Reduzierte Downloadgröße
+\end{itemize}
+		
+\subsection{Java 1.4.2 ''Mantis''}
+\begin{itemize}
+	\item Nochmals über 2.000 Bugfixes
+	\item 15-30\% niedrigere Startzeiten\footnote{Vor allem auf Linux/x86 Systemen}
+	\item Zwei neue Swing Look-and-Feels (Windows XP\tm und Linux GTK)
+	\item Neuer Windows Installer und nochmalige Reduzierung der Downloadgröße
+	\item ActiveX\tm Brücke
+\end{itemize}	
+
+Eine automatische Updatefunktion für die JRE\tm\footnote{Java Runtime Environment} wurde auf ein zukünftiges Release verschoben, da die nötige Testphase nicht abgeschlossen werden konnte.\footnote{Sie wurde in einem späteren Re\-lease der Version 1.4.2 eingebracht.}
+		
+Die Java Grafikbibliothek Swing erfuhr bis zur Version 1.4.2 insgesamt eine 50-prozentige Performancesteigerung gegenüber der Version 1.3.1.
+
+\section{Neuerungen in Java 1.5 ''Tiger''}
+	
+	Die neue Java Version 1.5 wurde komplett durch den JCP entwickelt und enthält 15 JSRs für neue Features und Pakete:
+	
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|l|l|}
+		  \hline
+		  \textbf{xxxxxxxxxxxxxxxxx} & \textbf{xxxxxxxxxxxxxxxxxxxx}\\
+		  \hline
+		  \hline
+			JSR 003: JMX\tm Management API 	& JSR 166: Concurrency Utilities \\
+			JSR 013: Decimal Arithmetic     & JSR 174: JVM\tm Monitoring \\
+			JSR 014: Generic Types	        & JSR 175: Metadata \\
+			JSR 028: SASL                   & JSR 199: Compiler APIs \\
+			\hline
+			JSR 114: JDBC\tm API Rowsets & JSR 200: Pack Transfer Format \\
+			JSR 133: New Memory Model	 & JSR 201: Four Language Updates \\
+			JSR 163: Profiling API		 & JSR 204: Unicode Surrogates \\
+										 & JSR 206: JAXP 1.3 \\
+		  \hline
+		\end{tabular}
+	\end{center}
+
+	\caption{JSRs enthalten in Java 1.5} 
+\end{table}
+	
+	Weitere Verbesserungen sollen wie immer in den Bereichen 
+	\begin{itemize}
+		\item Performance (HotSpot tuning, NIO API\footnote{New Input/Output API}, Startzeit, etc.)
+		\item JVM\tm\footnote{Java Virtual Machine} Management und Überwachung
+		\item Grafik (Look-and-Feels, OpenGL, etc.)
+		\item XML (XML 1.1, XML Schemas, etc.)
+		\item Web Services
+		\item JDBC\tm\footnote{Java Database Connection}
+	\end{itemize}
+	stattfinden.
+	
+	Die wichtigsten Änderungen der neuen Java Version werden in den nachfolgenden Kapiteln dieser Arbeit näher betrachtet.
+	
