@@ -76,9 +76,4 @@ desktop.ini
 *.backup
 
 ## Compiled PDF output
-# Uncomment the following line if you do NOT want to track the compiled thesis PDF in git:
-# Diplomarbeit.pdf
-# Or to ignore all generated PDFs while preserving PDF assets in subdirectories (e.g. pdf/):
-# *.pdf
-# !pdf/**
-# !images/**
+Diplomarbeit.pdf
