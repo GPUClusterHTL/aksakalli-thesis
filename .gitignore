@@ -1,0 +1,84 @@
+## Core LaTeX / pdfLaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lol
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Bibliography auxiliary files (bibtex / biblatex / biber)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+## Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+latex.out/
+
+## Indexes, glossaries, acronyms
+*.idx
+*.ilg
+*.ind
+*.ist
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+
+## Presentation & package auxiliary files
+*.nav
+*.snm
+*.vrb
+*.maf
+*.mtc*
+*-converted-to.*
+
+## TeX editor & IDE auxiliary files
+*.tprs
+*.tcp
+*.tps
+*.auxlock
+
+## OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+## Editor & IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.sav
+*.backup
+
+## Compiled PDF output
+# Uncomment the following line if you do NOT want to track the compiled thesis PDF in git:
+# Diplomarbeit.pdf
+# Or to ignore all generated PDFs while preserving PDF assets in subdirectories (e.g. pdf/):
+# *.pdf
+# !pdf/**
+# !images/**
