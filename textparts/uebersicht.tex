@@ -1,7 +1,24 @@
 \section{Einleitung zum Rendering (ca. 1,5 Seiten)}
 
-\subsection{Motivation}
 
+Rendering bezeichnet den Prozess, aus der Beschreibung einer dreidimensionalen Szene eine zweidimensionale Abbildung zu berechnen. Eine solche Szene kann sich aus verschiedenen geometrischen Grundkörpern wie \zb Pyramiden, Kugeln oder Würfeln zusammensetzen. Dabei muss bei solch einer Projektion berücksichtigt werden, wie diese Körper räumlich zueinander stehen, welche Oberflächen im Sichtfeld liegen und welche Flächen durch andere Objekte verdeckt werden. \cite{chapman:13}
 
+In den meisten Fällen werden jedoch Dreiecke verwendet, um komplexere Körper zu modellieren. Dies hat den Grund, dass sich durch die Kombination vieler Dreiecke beliebige Formen und Körper darstellen lassen. Dabei gilt: Je mehr Dreiecke zur Annäherung einer Oberfläche verwendet werden, desto detaillierter und klarer ist der Körper erkennbar. \cite{twodee:triangles}
+
+Die reine Projektion dieser Dreiecke führt jedoch nicht zu einem realistisch aussehenden Bild. Ein entscheidender Faktor dabei ist die Berechnung der Lichtinteraktion, auch Schattierung (Shading) genannt, durch welche Körper erst ihre sichtbare Farbe und Helligkeit erhalten. Im nächsten Schritt muss nun simuliert werden, wie das Licht von einer Lichtquelle emittiert wird, wie es an unterschiedlichen Materialien wie Glas oder Metall reflektiert sowie gebrochen wird und schließlich wie es in die virtuelle Kamera fällt, die den Beobachter widerspiegeln soll. \cite{stuart:24, christensen:16}
+
+Der Bedarf einer solchen physikalisch basierten Rendering-Methode ist in einigen Bereichen wie der Filmproduktion, Architekturvisualisierung sowie in modernen Echtzeitanwendungen wie Videospielen stetig gewachsen. Da solch eine Simulation von unzähligen Lichtpfaden mit einem massiven Rechenaufwand verbunden ist, sind hochgradig optimierte Algorithmen und der effektive Einsatz moderner Grafikprozessoren eine wesentliche Voraussetzung für die Anwendung physikalisch korrekter Bildsynthese-Verfahren. \cite{christensen:16, nvidia:rt}
 
 \subsection{Grenzen der Rasterisierung und der Übergang zum Path Tracing}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.60]{images/Rasterization.png}
+	\caption{Rasterisierung eines Dreiecks \cite{img:raster}}
+	\label{fig:rasterization}
+\end{figure}
+
+Rasterisierung ist und war die gängigste Methode, um nun diese Projektion zu erzeugen. Die Ecken- und Kanteninformationen der vorhandenen Objekte werden auf das 2D-Pixelgitter projiziert und folgend werden alle Pixel eingefärbt, die sich innerhalb des Dreiecks befinden. Dieses Verfahren wird auf alle Körper angewendet. Um nun aber herauszufinden, welche Figuren sich perspektivisch vor der virtuellen Kamera befinden, sind zusätzliche Informationen, in diesem Falle ein Z-Buffer, nötig, um die Abbildung zu errechnen. Das führt jedoch dazu, dass bei der Berechnung eines einzelnen Pixels weitere Informationen fehlen, um eine realistische Farbeinwirkung zu berechnen, wodurch ungenaue mathematische Tricks notwendig sind, um globale Lichteffekte zu simulieren. \cite{chapman:13, stuart:24}
+
+Raytracing verfolgt hingegen ein anderes Prinzip, bei dem der Lichtweg selbst simuliert wird. Dabei werden Sehstrahlen (Rays) rückwärts von der virtuellen Kamera aus durch jedes Pixel in die Szene verfolgt, da nur jene Lichtstrahlen für das finale Bild relevant sind, welche die Kamera tatsächlich erreichen. Dadurch lassen sich visuelle Effekte wie Reflexion, Lichtbrechung und Schattenwurf physikalisch korrekt darstellen. Path Tracing erweitert diesen Ansatz, indem pro Pixel einige zufällige Lichtpfade über mehrere Reflexionen hinweg durch die Szene verfolgt werden, um die gesamte globale Beleuchtung physikalisch präzise zu simulieren. \cite{chapman:13, nvidia:rt, christensen:16}
